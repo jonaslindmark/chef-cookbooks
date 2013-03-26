@@ -4,13 +4,18 @@ description "Set up a devbox"
 run_list(
   "recipe[apt]",
   "recipe[nodejs]",
-  "recipe[git]"
+  "recipe[git]",
+  "recipe[vim]"
 )
 # Attributes applied if the node doesn't have it set already.
 override_attributes(
     'nodejs' => {
         'version' => '0.10.1'
-    })
+    },
+    'vim' => {
+        'extra_packages' => ['python', 'ruby']
+    }
+)
 default_attributes()
 # Attributes applied no matter what the node has set already.
 #override_attributes()
