@@ -1,5 +1,10 @@
 directory "/usr/local/nodejs"
 
+package "tmux"
+package "curl"
+package "make"
+package "ack-grep"
+
 cookbook_file "/tmp/vim.tar.gz" do
   source "vim.tar.gz"
   owner 'root'
